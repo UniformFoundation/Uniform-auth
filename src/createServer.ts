@@ -103,7 +103,7 @@ async function createServer() {
 
         app.log.error(error, `Request #${req.id} (${req.url}) error ${error.code}`);
 
-        await reply.status(500).send({
+        await reply.status(error.statusCode).send({
             data: null,
             meta: {},
             errors: [error],

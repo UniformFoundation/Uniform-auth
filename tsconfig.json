@@ -9,6 +9,7 @@
         "declarationMap": true,
         "forceConsistentCasingInFileNames": true,
         "inlineSources": false,
+        "experimentalDecorators": true,
         "isolatedModules": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,

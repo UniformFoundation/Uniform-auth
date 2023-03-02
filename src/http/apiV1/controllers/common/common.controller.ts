@@ -1,5 +1,6 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
-import { POST, Controller } from 'fastify-decorators';
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { Controller, POST } from 'fastify-decorators';
+
 import { DownloadProtectedFileSchema, DownloadProtectedFileSchemaType } from './schemas';
 
 @Controller({ route: '/common' })

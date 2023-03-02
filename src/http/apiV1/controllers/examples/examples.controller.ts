@@ -1,5 +1,6 @@
-import { FastifyRequest, FastifyReply } from 'fastify';
-import { GET, Controller } from 'fastify-decorators';
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { Controller, GET } from 'fastify-decorators';
+
 import { GetExampleEntitySchema, GetExampleEntitySchemaType } from './schemas';
 
 @Controller({ route: '/examples' })

@@ -8,8 +8,7 @@ import serveStoplight from '@uniform-foundation/fastify-serve-stoplight';
 import { ReadStream } from 'fs';
 import path, { resolve } from 'path';
 import pino from 'pino';
-import { bootstrap } from 'fastify-decorators';
-import { APIv1 } from './http/apiV1';
+import { bootstrap } from 'fastify-decorators';XMLDocument
 
 import { NotFoundError } from './http/apiV1/common/errors/NotFoundError';
 
@@ -123,7 +122,7 @@ async function createServer() {
     app.register(bootstrap, {
         directory: resolve(__dirname, 'http', 'apiV1', 'controllers'),
         mask: /\.controller\./,
-        prefix: '/api/v1/',
+        prefix: '/api/v1',
     })
 
     // app.register(APIv1);

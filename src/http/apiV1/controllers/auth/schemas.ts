@@ -30,9 +30,10 @@ export const LoginSchema = {
     body: {
         type: 'object',
         properties: {
-            login: { type: 'string', description: 'Логин', example: 'TestLogin' },
-            password: { type: 'string', description: 'Пароль', example: 'testPassword775105k#i*' },
+            login: { type: 'string', description: 'Логин' },
+            password: { type: 'string', description: 'Пароль' },
         },
+        $schema: 'http://json-schema.org/draft-04/schema#',
     },
 };
 
@@ -52,7 +53,11 @@ export interface RefreshSchemaType {
 export const RefreshSchema = {
     querystring: { type: 'object' },
     params: { type: 'object' },
-    body: { type: 'object', properties: { refresh_token: { type: 'string', description: 'Refresh token' } } },
+    body: {
+        type: 'object',
+        properties: { refresh_token: { type: 'string', description: 'Refresh token' } },
+        $schema: 'http://json-schema.org/draft-04/schema#',
+    },
 };
 
 export interface GetCurrentUserSchemaType {

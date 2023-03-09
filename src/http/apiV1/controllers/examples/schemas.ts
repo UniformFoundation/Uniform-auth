@@ -11,10 +11,10 @@ export interface GetExampleEntitySchemaType {
 export const GetExampleEntitySchema = {
     querystring: {
         type: 'object',
-        properties: { include: { type: 'string', $schema: 'http://json-schema.org/draft-04/schema#' } },
+        properties: { include: { type: 'string' } },
     },
     params: {
         type: 'object',
-        properties: { id: { type: 'integer', minimum: 1, $schema: 'http://json-schema.org/draft-04/schema#' } },
+        properties: { id: { type: 'integer', minimum: 1 } },
     },
 };

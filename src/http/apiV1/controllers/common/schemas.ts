@@ -20,6 +20,5 @@ export const DownloadProtectedFileSchema = {
     body: {
         type: 'object',
         description: 'Информация о файле в виде объекта. Для потребителя неважно какие внутри ключи',
-        $schema: 'http://json-schema.org/draft-04/schema#',
     },
 };

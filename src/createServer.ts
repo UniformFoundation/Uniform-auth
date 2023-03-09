@@ -2,13 +2,14 @@ import circuitBreaker from '@fastify/circuit-breaker';
 import formBody from '@fastify/formbody';
 import helmet from '@fastify/helmet';
 import { getEnvironment } from '@scripts/env';
-import Fastify, { RequestGenericInterface } from 'fastify';
-import multer from 'fastify-multer';
+import { createTaskRunner } from '@uniform-foundation/cron-runner';
 import serveStoplight from '@uniform-foundation/fastify-serve-stoplight';
+import Fastify, { RequestGenericInterface } from 'fastify';
+import { bootstrap } from 'fastify-decorators';
+import multer from 'fastify-multer';
 import { ReadStream } from 'fs';
 import path, { resolve } from 'path';
 import pino from 'pino';
-import { bootstrap } from 'fastify-decorators';XMLDocument
 
 import { NotFoundError } from './http/apiV1/common/errors/NotFoundError';
 
@@ -118,12 +119,11 @@ async function createServer() {
         global: true,
     });
 
-
     app.register(bootstrap, {
         directory: resolve(__dirname, 'http', 'apiV1', 'controllers'),
         mask: /\.controller\./,
         prefix: '/api/v1',
-    })
+    });
 
     // app.register(APIv1);
 
@@ -131,6 +131,18 @@ async function createServer() {
     // app.register(now, {
     //   routesFolder: path.join(__dirname, './routes'),
     // });
+
+    const runner = await createTaskRunner({
+        folder: resolve(__dirname, './tasks'),
+        pattern: '**/*.ts',
+        transpiledFolder: resolve(__dirname, '..', 'storage', 'cache', './tasks'),
+        onTaskComplete(task) {
+            app.log.info(task, '[task] completed');
+        },
+        tickTime: 1000,
+    });
+
+    app.addHook('onClose', () => runner.stop());
 
     await app.ready();
 

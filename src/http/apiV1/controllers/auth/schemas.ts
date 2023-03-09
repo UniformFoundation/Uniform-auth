@@ -33,7 +33,6 @@ export const LoginSchema = {
             login: { type: 'string', description: 'Логин' },
             password: { type: 'string', description: 'Пароль' },
         },
-        $schema: 'http://json-schema.org/draft-04/schema#',
     },
 };
 
@@ -56,7 +55,6 @@ export const RefreshSchema = {
     body: {
         type: 'object',
         properties: { refresh_token: { type: 'string', description: 'Refresh token' } },
-        $schema: 'http://json-schema.org/draft-04/schema#',
     },
 };
 

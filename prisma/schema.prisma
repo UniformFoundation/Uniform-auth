@@ -1,0 +1,62 @@
+generator client {
+    provider      = "prisma-client-js"
+    binaryTargets = ["linux-musl", "native"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id Int @id @default(autoincrement())
+
+    email        String
+    passwordHash String
+    passwordSalt String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    assignedRoles UserRole[] @relation("UserAssignedRoles")
+    roles         UserRole[] @relation("UserRoles")
+}
+
+// for e.g. post.read, post.update
+model Permission {
+    id Int @id @default(autoincrement())
+
+    code            String
+    rolePermissions RolePermission[]
+}
+
+// for e.g. admin, content-manager, etc.
+model Role {
+    id Int @id @default(autoincrement())
+
+    code            String
+    rolePermissions RolePermission[]
+    userRoles       UserRole[]
+}
+
+model RolePermission {
+    id     Int  @id @default(autoincrement())
+    role   Role @relation(fields: [roleId], references: [id])
+    roleId Int
+
+    permission   Permission @relation(fields: [permissionId], references: [id])
+    permissionId Int
+}
+
+model UserRole {
+    user   User @relation(fields: [userId], references: [id], name: "UserRoles")
+    userId Int
+    role   Role @relation(fields: [roleId], references: [id])
+    roleId Int
+
+    assignedAt   DateTime @default(now())
+    assignedBy   User     @relation(fields: [assignedById], references: [id], name: "UserAssignedRoles")
+    assignedById Int
+
+    @@id([userId, roleId])
+}

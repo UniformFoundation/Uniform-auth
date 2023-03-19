@@ -9,6 +9,7 @@
     "spectral": "spectral lint ./public/api-docs/**/index.yaml",
     "stoplight": "npx http-server public/api-docs/v1",
     "dev": "ts-node-dev -r dotenv/config -r tsconfig-paths/register --respawn --transpile-only --debounce 400 --watch=.env,src/**/*.ts,package.json,prisma src/index.ts",
+    "docker-dev": "ts-node-dev -r dotenv/config -r tsconfig-paths/register --respawn --transpile-only --debounce 400 --watch=.env,src/**/*.ts,package.json,prisma --poll src/index.ts",
     "gen:dotenv-example": "ts-node ./src/scripts/createDotEnvExample.ts",
     "generate-server": "node ./node_modules/openapi-generator-server/dist/index.js"
   },
@@ -21,6 +22,7 @@
     "@fastify/formbody": "^7.4.0",
     "@fastify/helmet": "^10.1.0",
     "@fastify/swagger": "^8.3.1",
+    "@prisma/client": "^4.11.0",
     "@sinclair/typebox": "^0.25.21",
     "@uniform-foundation/cron-runner": "1.0.2",
     "@uniform-foundation/fastify-serve-stoplight": "^1.0.0",
@@ -37,6 +39,7 @@
     "node-fetch-commonjs": "3.2.4",
     "pino": "^8.9.0",
     "pino-pretty": "^9.1.1",
+    "prisma": "^4.11.0",
     "resolve": "^1.22.1",
     "uuid": "^9.0.0"
   },
@@ -50,6 +53,7 @@
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "tsconfig-paths": "^4.1.2"
+    "tsconfig-paths": "^4.1.2",
+    "rimraf": "^4.1.2"
   }
 }

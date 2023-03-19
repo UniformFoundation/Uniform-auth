@@ -254,6 +254,23 @@
     rxjs "7.5.5"
     tslib "2.0.3"
 
+"@prisma/client@^4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-4.11.0.tgz#41d5664dea4172c954190a432f70b86d3e2e629b"
+  integrity sha512-0INHYkQIqgAjrt7NzhYpeDQi8x3Nvylc2uDngKyFDDj1tTRQ4uV1HnVmd1sQEraeVAN63SOK0dgCKQHlvjL0KA==
+  dependencies:
+    "@prisma/engines-version" "4.11.0-57.8fde8fef4033376662cad983758335009d522acb"
+
+"@prisma/engines-version@4.11.0-57.8fde8fef4033376662cad983758335009d522acb":
+  version "4.11.0-57.8fde8fef4033376662cad983758335009d522acb"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-4.11.0-57.8fde8fef4033376662cad983758335009d522acb.tgz#74af5ff56170c78e93ce46c56510160f58cd3c01"
+  integrity sha512-3Vd8Qq06d5xD8Ch5WauWcUUrsVPdMC6Ge8ILji8RFfyhUpqon6qSyGM0apvr1O8n8qH8cKkEFqRPsYjuz5r83g==
+
+"@prisma/engines@4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-4.11.0.tgz#c99749bfe20f58e8f4d2b5e04fee0785eba440e1"
+  integrity sha512-0AEBi2HXGV02cf6ASsBPhfsVIbVSDC9nbQed4iiY5eHttW9ZtMxHThuKZE1pnESbr8HRdgmFSa/Kn4OSNYuibg==
+
 "@rollup/plugin-commonjs@^20.0.0":
   version "20.0.0"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-commonjs/-/plugin-commonjs-20.0.0.tgz#3246872dcbcb18a54aaa6277a8c7d7f1b155b745"
@@ -722,13 +739,14 @@
   resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-9.0.1.tgz#98586dc36aee8dacc98cc396dbca8d0429647aa6"
   integrity sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==
 
-"@uniform-foundation/cron-runner@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniform-foundation/cron-runner/-/cron-runner-1.0.1.tgz#773b26fe33416d841b3d1f25693870ae18a638ea"
-  integrity sha512-RlogW4pDaemBN2qlCYWP3c4O1yKhjRAwakGtgzjoMHVKunmz470yxt5HYP7M71o5gInMxVXTFQ5hk1czoMuHjQ==
+"@uniform-foundation/cron-runner@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@uniform-foundation/cron-runner/-/cron-runner-1.0.2.tgz#21744e7b60c3d43f2bfcc7724da03fcda1448c71"
+  integrity sha512-uhf1rAjNmprNZDKZhC6vEXrQmG/1CTV82BtJdZUGVn2/jN0eXHRYySkcmjZmncCZk41D8xly5xqkzQP1V/7erQ==
   dependencies:
     cron-parser "^4.6.0"
     tiny-glob "^0.2.9"
+    typescript "4.9.5"
 
 "@uniform-foundation/fastify-serve-stoplight@^1.0.0":
   version "1.0.1"
@@ -741,10 +759,10 @@
     openapi-types "^12.0.0"
     yaml "^2.1.1"
 
-"@uniform-foundation/node-crunz@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@uniform-foundation/node-crunz/-/node-crunz-1.0.1.tgz#5a31227259a70a2a33687a1f12c5c57820f3e5d5"
-  integrity sha512-z7p5yZ0yAsMRRLZePgWvLdVrOn6nATrqSJxU34gSPaz85vKTVZgbJS1nuAkN4SfDifomSM1EUsUgjfL0LWhfZw==
+"@uniform-foundation/node-crunz@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@uniform-foundation/node-crunz/-/node-crunz-1.0.2.tgz#ebb3ddf6e0034bce535569109a9e1246e7f603c3"
+  integrity sha512-/lBfVuX9R9Nl8C48GN+pY4CnChj8TnHQIu+YlAc1QxSZUVJSUREFp+ozKiAT/MGTlYUk6INsyukMc+4WVpr8nA==
 
 "@uniform-foundation/openapi-generator-server@^1.0.0":
   version "1.0.2"
@@ -2963,6 +2981,13 @@ printable-characters@^1.0.42:
   resolved "https://registry.yarnpkg.com/printable-characters/-/printable-characters-1.0.42.tgz#3f18e977a9bd8eb37fcc4ff5659d7be90868b3d8"
   integrity sha512-dKp+C4iXWK4vVYZmYSd0KBH5F/h1HoZRsbJ82AVKRO3PEo8L4lBS/vLwhVtpwwuYcoIsVY+1JYKR268yn480uQ==
 
+prisma@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-4.11.0.tgz#9695ba4129a43eab3e76b5f7a033c6c020377725"
+  integrity sha512-4zZmBXssPUEiX+GeL0MUq/Yyie4ltiKmGu7jCJFnYMamNrrulTBc+D+QwAQSJ01tyzeGHlD13kOnqPwRipnlNw==
+  dependencies:
+    "@prisma/engines" "4.11.0"
+
 process-warning@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-2.1.0.tgz#1e60e3bfe8183033bbc1e702c2da74f099422d1a"
@@ -3686,6 +3711,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
+
+typescript@4.9.5:
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
+  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"

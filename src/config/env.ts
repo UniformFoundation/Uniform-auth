@@ -39,12 +39,7 @@ export const EnvironmentSchema = Type.Object({
 
     LOG_LEVEL: Type.String({}),
 
-    DB_CONNECTION: Type.String(),
-    DB_HOST: Type.String(),
-    DB_PORT: Type.Number(),
-    DB_DATABASE: Type.String(),
-    DB_USERNAME: Type.String(),
-    DB_PASSWORD: Type.String(),
+    DATABASE_URL: Type.String(),
 
     CACHE_DRIVER: Type.String(),
     FILESYSTEM_DISK: Type.String(),

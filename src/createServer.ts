@@ -10,6 +10,7 @@ import multer from 'fastify-multer';
 import { ReadStream } from 'fs';
 import path, { resolve } from 'path';
 import pino from 'pino';
+import { PrismaClient } from '@prisma/client';
 
 import { NotFoundError } from './http/apiV1/common/errors/NotFoundError';
 
@@ -40,9 +41,9 @@ declare module 'fastify' {
         Reply?: ReplyWith;
     }
 
-    // export interface FastifyInstance {
-    //     prisma: PrismaClient;
-    // }
+    export interface FastifyInstance {
+        prisma: PrismaClient;
+    }
 }
 
 const rootPath = resolve(__dirname, '../');
@@ -67,8 +68,10 @@ async function createServer() {
         }),
     });
 
-    // const prisma = new PrismaClient({});
-    // app.decorate('prisma', prisma);
+    const prisma = new PrismaClient({});
+    app.decorate('prisma', prisma);
+
+    await prisma.$connect();
 
     // TODO: env
     app.register(circuitBreaker, {

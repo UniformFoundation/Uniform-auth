@@ -9,6 +9,10 @@ export default class ExamplesController {
         url: '/:id',
         options: {
             schema: GetExampleEntitySchema,
+            onResponse: (req, repl, done) => {
+                console.log('   sending to statistics server info about request...');
+                done();
+            },
         },
     })
     async getExampleEntityHandler(req: FastifyRequest<GetExampleEntitySchemaType>, res: FastifyReply) {
